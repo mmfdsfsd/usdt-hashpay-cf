@@ -1,14 +1,19 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "hashpay",
+  "name": "usdt-hashpay-cf",
   "main": "src/index.ts",
   "compatibility_date": "2026-06-14",
-  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
   "assets": {
     "binding": "ASSETS",
     "directory": "./dist",
     "not_found_handling": "single-page-application",
-    "run_worker_first": ["/*", "!/assets/*"]
+    "run_worker_first": [
+      "/*",
+      "!/assets/*"
+    ]
   },
   "observability": {
     "enabled": true
@@ -20,7 +25,8 @@
     {
       "binding": "DB",
       "database_name": "hashpay",
-      "migrations_dir": "src/server/db/d1/migrations"
+      "migrations_dir": "src/server/db/d1/migrations",
+      "database_id": "dad095e3-1148-4ad1-a10f-2f7f57c638dd"
     }
   ],
   "queues": {
@@ -38,6 +44,8 @@
     ]
   },
   "triggers": {
-    "crons": ["* * * * *"]
+    "crons": [
+      "* * * * *"
+    ]
   }
 }
